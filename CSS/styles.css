@@ -1,0 +1,120 @@
+/* Global styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Consolas, monospace;
+    color: green;
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Header styling */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: green;
+    font-size: 14px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo img {
+    max-width: 80px;
+    height: auto;
+}
+
+/* Main content styling */
+main {
+    margin-top: 70px;
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.hero h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: lime;
+}
+
+.hero .highlight {
+    font-size: 1.2em;
+    color: lightgreen;
+}
+
+/* Section styling */
+section {
+    margin-bottom: 30px;
+}
+
+.services ul, .user-services ul {
+    list-style: none;
+    padding: 0;
+}
+
+.services ul li, .user-services ul li {
+    margin-bottom: 10px;
+}
+
+/* Newsletter styling */
+#newsletter {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#newsletter input {
+    padding: 10px;
+    border: 1px solid green;
+    background: #111;
+    color: green;
+    width: 70%;
+    max-width: 300px;
+    margin-right: 10px;
+}
+
+#newsletter button {
+    padding: 10px 20px;
+    background: green;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#newsletter button:hover {
+    background: lime;
+}
+
+/* Footer styling */
+footer {
+    background: rgba(0, 0, 0, 0.9);
+    color: green;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .header-logo img {
+        max-width: 60px;
+    }
+
+    .hero h1 {
+        font-size: 1.5em;
+    }
+
+    #newsletter input {
+        width: 90%;
+    }
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackMan - Services</title>
+    <link rel="icon" href="./assets/hack_ZYO_icon.ico">
+    <link rel="stylesheet" href="./CSS/styles.css">
+</head>
+<body>
+    <header>
+        <div id="ip-address">Fetching IP...</div>
+        <div class="header-logo">
+            <img src="./assets/hack_ZYO_icon.ico" alt="HackMan Logo">
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Welcome to HackMan Services</h1>
+            <p class="highlight">Offering Ethical Hacking Services at <strong>90% Off</strong>! For December Only!</p>
+            <p>
+                I specialize in ethical hacking, helping you secure your system, perform penetration testing, and more. 
+                If I can't crack it, you get a full refund!
+            </p>
+        </section>
+
+        <section class="services">
+            <h2>Services We Offer</h2>
+            <ul id="services-list"></ul>
+        </section>
+
+        <section class="user-services">
+            <h2>Services You Want</h2>
+            <ul id="user-services"></ul>
+        </section>
+
+        <section id="newsletter">
+            <h3>Subscribe to our Newsletter</h3>
+            <form id="newsletter-form">
+                <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 HackMan. All rights reserved.</p>
+            <p>
+                Contact us at <a href="mailto:support@hackman.com">support@hackman.com</a>
+            </p>
+            <p>
+                <strong>Follow us:</strong>
+                <a href="https://x.com/griffinssssss">Twitter</a> |
+                <a href="https://www.facebook.com/SirGriffinSir/">Facebook</a> |
+                <a href="https://www.linkedin.com/in/kabelo-samkelo-aa654931a/">LinkedIn</a>
+                <a href="https://github.com/Griffin71/">Github</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="./JS/IP.js"></script>
+    <!--<script src="./JS/codeValidation.js"></script>-->
+    <script>
+        // Services data
+        const services = [
+            { name: 'Penetration Testing', price: 'From R900 (originally R9000)', description: 'Assess your system\'s security.' },
+            { name: 'Vulnerability Scanning', price: 'From R540 (originally R5400)', description: 'Identify vulnerabilities in your website or application.' },
+            { name: 'Network Security Assessment', price: 'From R1500 (originally R15000)', description: 'Ensure your network is secure from cyber threats.' },
+            { name: 'Phishing Simulation', price: 'From R1050 (originally R10500)', description: 'Test your team\'s awareness against phishing attacks.' },
+            { name: 'Web Application Testing', price: 'From R1200 (originally R12000)', description: 'Check the security of your web app from common vulnerabilities.' },
+            { name: 'Security Auditing', price: 'From R2250 (originally R22500)', description: 'Get a comprehensive review of your company\'s security posture.' },
+            { name: 'Bug Bounty Programs', price: 'From R3000 (originally R30000)', description: 'Participate in ethical bug bounty programs with full reporting.' }
+        ];
+
+        const userService = [
+            { name: 'Instagram Account', price: 'From R200 (originally R500)', description: 'Assess your target\'s account.' },
+            { name: 'Recover Your Account', price: 'From R200 (originally R540)', description: 'If your account was hacked, you can recover it here.' },
+            { name: 'Screenshots', price: 'From R100 (originally R250)', description: 'Get specific screenshots from a target.' },
+            { name: 'Find User Location', price: 'From R500 (originally R1000)', description: 'Find your target\'s location.' },
+            { name: 'Monitor Their Social Accounts', price: 'From R1200 (originally R2000)', description: 'Monitor their chats and footprints on Instagram, Facebook & X (WhatsApp coming soon).'},
+            { name: 'Check Call & SMS Logs', price: 'From R1200 (originally R2000)', description: 'Get a comprehensive log of calls and SMS.' },
+            { name: 'Delete All Accounts', price: 'From R3000 (originally R30000)', description: 'Erase their social accounts completely.' }
+        ];
+
+        // Shuffle and display services
+        function shuffleArray(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+        }
+
+        function displayServices() {
+            shuffleArray(services);
+            const servicesList = document.getElementById('services-list');
+            servicesList.innerHTML = '';
+            services.forEach(service => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `<strong>${service.name}</strong> - ${service.price} - ${service.description}`;
+                servicesList.appendChild(listItem);
+            });
+        }
+
+        function displayUserServices() {
+            shuffleArray(userService);
+            const userList = document.getElementById('user-services');
+            userList.innerHTML = '';
+            userService.forEach(service => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `<strong>${service.name}</strong> - ${service.price} - ${service.description}`;
+                userList.appendChild(listItem);
+            });
+        }
+
+        displayServices();
+        displayUserServices();
+
+        // Newsletter subscription
+        document.getElementById("newsletter-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            const email = document.getElementById("newsletter-email").value;
+
+            if (email) {
+                fetch("http://localhost:3000/subscribe", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ email })
+                })
+                .then((response) => {
+                    if (response.ok) {
+                        alert("Thank you for subscribing to our newsletter!");
+                        document.getElementById("newsletter-email").value = ''; // Clear the input field
+                    } else {
+                        alert("There was an issue processing your subscription. Please try again.");
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error:", error);
+                    alert("An error occurred. Please try again later.");
+                });
+            } else {
+                alert("Please enter a valid email address.");
+            }
+        });
+    </script>
+</body>
+</html>

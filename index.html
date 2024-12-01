@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/hack_ZYO_icon.ico">
+    <title>HackMan</title>
+    <link rel="stylesheet" href="./CSS/index.css">
+</head>
+<body>
+    <header>
+        <div id="ip-address">Fetching IP...</div>
+    </header>
+    <div class="main">
+        <h1>Welcome to HackMan</h1>
+        <div class="lines">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <p>Solve the math problem to get the access code:</p>
+        <p id="math-problem"></p>
+        
+        <!-- Form for solving the problem -->
+        <form id="math-form">
+            <input type="number" id="user-answer" placeholder="Enter your answer" required>
+            <button type="submit">Submit Answer</button>
+        </form>
+
+        <!-- Form for entering the access code (initially hidden) -->
+        <form id="access-form" style="display: none;">
+            <input type="password" id="access-code" placeholder="Enter the access code" required>
+            <button type="submit">Submit Code</button>
+        </form>
+
+        <p id="error-message"></p>
+
+        <div class="falling-numbers">
+            <div class="row" id="row1"></div>
+            <div class="row" id="row2"></div>
+            <div class="row" id="row3"></div>
+            <div class="row" id="row4"></div>
+            <div class="row" id="row5"></div>
+        </div>
+    </div>
+    <footer>
+        <p>© 2024 HackMan. All rights reserved.</p>
+        <p>
+            <strong>Follow us:</strong>
+            <a href="https://x.com/griffinssssss">Twitter</a> |
+            <a href="https://www.facebook.com/SirGriffinSir/">Facebook</a> |
+            <a href="https://www.linkedin.com/in/kabelo-samkelo-aa654931a/">LinkedIn</a>
+        </p>
+    </footer>
+    <script src="./JS/IP.js"></script>
+    <script src="./JS/index.js"></script>
+    <script src="./JS/mathProblem.js"></script>
+</body>
+</html>
