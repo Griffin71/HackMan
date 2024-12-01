@@ -56,7 +56,7 @@ HackMan/
 ├── assets/
 │   └── hack_ZYO_icon.ico  # Favicon for the project
 ├── CSS/
-|    ├── styles.css
+|   ├── styles.css
 │   └── index.css          # Styling for the project
 ├── JS/
 │   ├── IP.js              # Handles IP fetching
