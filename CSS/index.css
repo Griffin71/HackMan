@@ -146,3 +146,155 @@ footer {
     font-size: 0.9rem;
     z-index: 100;
 }
+
+@media (max-width: 600px) {
+    .main {
+        width: 95%; /* Use almost full screen width */
+        padding: 5px; /* Minimal padding */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Smaller font size */
+    }
+
+    p, input, button {
+        font-size: 0.9rem; /* Adjust text and input sizes */
+    }
+
+    footer {
+        font-size: 12px; /* Smaller footer text */
+    }
+}
+ @media (min-width: 600px) and (max-width: 900px) {
+    .main {
+        width: 85%; /* Slightly larger than mobile */
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Adjusted font size */
+    }
+
+    p, input, button {
+        font-size: 1rem;
+    }
+
+    footer {
+        font-size: 13px; /* Adjust footer text size */
+    }
+}
+
+@media (min-width: 900px) {
+    .main {
+        max-width: 800px; /* Smaller than default large screens */
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p, input, button {
+        font-size: 1.1rem;
+    }
+
+    footer {
+        font-size: 14px; /* Default footer size for larger screens */
+    }
+}
+
+@media (max-width: 400px) {
+    body {
+        font-size: 12px; /* Reduce base font size */
+    }
+
+    header {
+        padding: 5px;
+        font-size: 10px; /* Adjust header font size */
+    }
+
+    .main {
+        width: 95%; /* Reduce width */
+        padding: 5px; /* Smaller padding */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Smaller title */
+    }
+
+    p, input, button {
+        font-size: 0.8rem; /* Adjust text size for readability */
+    }
+
+    footer {
+        font-size: 10px; /* Smaller footer text */
+    }
+
+    /* Additional adjustments */
+    #user-answer {
+        font-size: 14px; /* Make input slightly bigger */
+        padding: 8px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 600px) {
+    .main {
+        width: 90%; /* Adjust main content width */
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Moderate title size */
+    }
+
+    p, input, button {
+        font-size: 1rem; /* Adjust text sizes */
+    }
+
+    footer {
+        font-size: 12px; /* Adjust footer text */
+    }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+    .main {
+        width: 85%; /* Slightly larger content width */
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2rem; /* Adjust title size */
+    }
+
+    p, input, button {
+        font-size: 1rem;
+    }
+
+    footer {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 900px) {
+    .main {
+        max-width: 800px;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    p, input, button {
+        font-size: 1.1rem;
+    }
+
+    footer {
+        font-size: 14px;
+    }
+}
